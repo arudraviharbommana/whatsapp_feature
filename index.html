@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="chat-container-wrapper">
+        <!-- User 1 Chat Box -->
+        <div class="user-box">
+            <div class="chat-header">
+                <h2>User 1</h2>
+                <button class="clear-chat" onclick="clearChat('user1')">🗑 Clear Chat</button>
+            </div>
+            <div class="chat-container" id="chatUser1"></div>
+            <div class="input-container">
+                <input type="text" id="messageInputUser1" placeholder="User 1: Type a message..." onkeydown="handleEnter(event, 'user1')">
+                <button onclick="sendMessage('user1')">Send</button>
+                <button class="emoji-btn" onclick="toggleEmojiPicker('emojiPickerUser1', this)">😊</button>
+                <div class="emoji-picker" id="emojiPickerUser1"></div>
+            </div>
+            <div class="trash" onclick="deleteMessage('user1')">🗑️</div>
+        </div>
+
+        <!-- User 2 Chat Box -->
+        <div class="user-box">
+            <div class="chat-header">
+                <h2>User 2</h2>
+                <button class="clear-chat" onclick="clearChat('user2')">🗑 Clear Chat</button>
+            </div>
+            <div class="chat-container" id="chatUser2"></div>
+            <div class="input-container">
+                <input type="text" id="messageInputUser2" placeholder="User 2: Type a message..." onkeydown="handleEnter(event, 'user2')">
+                <button onclick="sendMessage('user2')">Send</button>
+                <button class="emoji-btn" onclick="toggleEmojiPicker('emojiPickerUser2', this)">😊</button>
+                <div class="emoji-picker" id="emojiPickerUser2"></div>
+            </div>
+            <div class="trash" onclick="deleteMessage('user2')">🗑️</div>
+        </div>
+    </div>
+</body>
+</html>
